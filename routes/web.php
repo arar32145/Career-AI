@@ -1,12 +1,14 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use OpenAI\Laravel\Facades\OpenAI;
+use App\Models\Admin;
+use App\Http\Controllers\QuestionsController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function(){return view('questionsCRUD.login');});
+Route::post('/', [AdminController::class,'index'])->name('admin.login');
 
 Route::get('/openai', function () {
 
